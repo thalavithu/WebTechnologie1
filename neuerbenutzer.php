@@ -32,13 +32,8 @@ $connect = mssql_connect("ibz-tagebuch-mysqldbserver.database.windows.net:1433",
 if (!$connect || !mssql_select_db('php', $connect)) {
     die('Konnte keine Verbindung aufbauen oder keine Datenbank auswählen!');
 }
-
-$version = mssql_query('SELECT @@VERSION');
-$datensatz = mssql_fetch_array($version);
-
-echo $datensatz[0];
-
-// Den Ergebnisspeicher freigeben
-mssql_free_result($version);
+else{
+    echo("Verbindung OK");
+}
 
 ?>
