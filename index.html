@@ -16,10 +16,31 @@
             <h1>IBZ Tagebuch</h1>
         </div>
         <div class="Inhalt">
-            <form method="post">
-                <input type="text" name="u" placeholder="Mail" required="required" />
-                <input type="password" name="p" placeholder="Password" required="required" />
-                <button type="submit" class="btn btn-primary btn-block btn-large">Login</button>
+            <form method="post" action="Login.php">
+                <h2>Anmeldung</h2>
+                <table>
+                    <tr>
+                        <th>
+                            <p class="Table">Username:</p>
+                        </th>
+                        <th>
+                            <input name="username" type="text" size="30" maxlength="30">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p class="Table">Passwort:</p>
+                        </th>
+                        <th>
+                            <input name="passwort" type="password" size="30" maxlength="30">
+                        </th>
+                    </tr>
+                </table>
+                <p>
+                    <input type="submit" value="Anmelden" />
+                    <input type="reset" value="Reset" />
+                    <INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;">
+                </p>
             </form>
         </div>
         <div class="footer">
