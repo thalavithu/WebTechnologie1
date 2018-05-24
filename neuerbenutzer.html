@@ -15,12 +15,54 @@
             <h1>IBZ Tagebuch</h1>
         </div>
         <div class="Inhalt">
-            <h2>Neuer Benutzer</h2>
+            <div class="Inhalt">
+                <form method="post" action="Einkaufueberpruefung.php">
+                    <h2>Registration</h2>
+                    <table>
+                        <tr>
+                            <th>
+                                <p class="Table">Vorname:</p>
+                            </th>
+                            <th>
+                                <input name="vorname" type="text" size="30" maxlength="30">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p class="Table">Nachname:</p>
+                            </th>
+                            <th>
+                                <input name="nachname" type="text" size="30" maxlength="30">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p class="Table">Mail:</p>
+                            </th>
+                            <th>
+                                <input name="mail" type="text" size="30" maxlength="30">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p class="Table">Kennwort:</p>
+                            </th>
+                            <th>
+                                <input name="kennwort" type="text" size="30" maxlength="30">
+                            </th>
+                        </tr>
+                    </table>
+                    <p>
+                        <input type="submit" value="Anmelden" />
+                        <input type="reset" value="Reset" />
+                        <INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;">
+                    </p>
+                </form>
+            </div>
+            <div class="footer">
+                <p>&copy; by Kevin K. &amp; Vithursan S.</p>
+            </div>
         </div>
-        <div class="footer">
-            <p>&copy; by Kevin K. &amp; Vithursan S.</p>
-        </div>
-    </div>
 </body>
 
 </html>
