@@ -14,13 +14,16 @@ $connectionOptions =
         "Uid" => "mysqldbuser",
         "PWD" => "LoveIBZ$2018$"
     );
-$conn = sqlsrv_connect($serverName, $connectionOptions)or die('Error connecting to the SQL Server database.');
+$conn = sqlsrv_connect($serverName, $connectionOptions);
 
 
 if( $conn ) {
+    echo "Test erfolgreich"
+    /*
     $sql = ("INSERT INTO tagebuch.Benutzer (Vorname, Nachname, Mail, Kennwort) VALUES ('$vorname', '$nachname', '$mail', '$kennwort');");
     $daten = mssql_query($sql);
-    header('Location: Index.html');
+    */
+    header('Location: index.html');
 }else{
     echo "Connection could not be established.<br />";
     die( print_r( sqlsrv_errors(), true));
