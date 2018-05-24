@@ -27,7 +27,7 @@ If ((!empty ($mail)) AND (!empty ($kennwort)) ){
     $daten = mssql_query($sql);
 }
 */
-$connect = mssql_connect("ibz-tagebuch-mysqldbserver.database.windows.net,1433", "mysqldbuser", "LoveIBZ$2018$");
+$connect = mssql_connect("ibz-tagebuch-mysqldbserver.database.windows.net:1433", "mysqldbuser", "LoveIBZ$2018$");
 
 if (!$connect || !mssql_select_db('php', $connect)) {
     die('Konnte keine Verbindung aufbauen oder keine Datenbank auswählen!');
