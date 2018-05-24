@@ -6,6 +6,7 @@
     <meta name="description" content="IBZ Tagebuch">
     <meta name="author" content="Kevin&Vithursan">
     <link rel="stylesheet" type="text/css" href="Style/style.css">
+    <link rel="stylesheet" type="text/css" href="Style/login.css">
     <link rel="shortcut icon" href="Bilder/tagebuch.ico" />
 </head>
 
@@ -13,29 +14,14 @@
     <div class="MainDiv">
         <div class="Title">
             <h1>IBZ Tagebuch</h1>
-            <img src="Bilder/logo.png" width="232.5" height="75" style="float: right" alt="IBZ Tagebuch Logo">
+            <img src="Bilder/logo.png" style="float: right" alt="IBZ Tagebuch Logo">
         </div>
         <div class="Inhalt">
-            <a href="Einkaufueberpruefung.html">Einkauf</a>
-            </br>
-            </br>
-            </br>
-            </br>
-            <a href="Preisliste.php" target="_blank">Preisliste/Bestand</a>
-            </br>
-            </br>
-            </br>
-            </br>
-            <a href="topglace.php" target="_blank">Meist verkaufte Glace</a>
-            </br>
-            </br>
-            </br>
-            </br>
-            <a href="Administrationueberpruefung.html">Administration</a>
-            </br>
-            </br>
-            </br>
-            </br>
+            <form method="post">
+                <input type="text" name="u" placeholder="Mail" required="required" />
+                <input type="password" name="p" placeholder="Password" required="required" />
+                <button type="submit" class="btn btn-primary btn-block btn-large">Login</button>
+            </form>
         </div>
         <div class="footer">
             <p>&copy; by Kevin K. &amp; Vithursan S.</p>
