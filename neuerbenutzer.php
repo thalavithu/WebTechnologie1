@@ -20,12 +20,16 @@ $conn = sqlsrv_connect($serverName, $connectionOptions);
 if( $conn ) {
     /*
     echo "Connection established.<br />";
+	
+     */
+	
+	 $sql = ("INSERT INTO tagebuch.Benutzer(Vorname, Nachname, Mail, Kennwort) VALUES ('$vorname', '$nachname', '$mail', '$kennwort');");
+	
     
-    $sql = ("INSERT INTO tagebuch.Benutzer (Vorname, Nachname, Mail, Kennwort) VALUES ('$vorname', '$nachname', '$mail', '$kennwort');");
-    $daten = mssql_query($sql);
-    */
+     $daten = sqlsrv_query($conn, $sql);
     
-    header('Location: index.html');
+     
+     header('Location: index.html');
     
     
 }else{
