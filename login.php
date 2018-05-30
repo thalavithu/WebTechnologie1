@@ -26,7 +26,6 @@ if( $conn ) {
     }
     else {
         echo 'Login not found';
-        header('Location: index.html');
     }
    
   
