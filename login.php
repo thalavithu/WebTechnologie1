@@ -17,17 +17,19 @@ $conn = sqlsrv_connect($serverName, $connectionOptions);
 
 if( $conn ) {
     /* echo "Connection established.<br />"; */
-    $sql = ("SELECT * FROM tagebuch.Benutzer WHERE Benutzer.Mail = '$mail' AND Benutzer.Kennwort = '$kennwort' ");
+    $sql = ("SELECT * FROM tagebuch.Benutzer WHERE Mail = '$mail' AND Kennwort = '$kennwort';");
     $result = sqlsrv_query($conn, $sql);
     $numrows = sqlsrv_num_rows($result);
-
+    echo $result;
+    /*
     if($numrows > 0) {
-        header('Location: tagebuch.html');
+        echo "Zeile vorhanden";
+       // header('Location: tagebuch.html');
     }
     else {
-        echo 'Login not found';
+        echo "Error in retrieveing row count.";
     }
-   
+   */
   
 }else{
     echo "Connection could not be established.<br />";
