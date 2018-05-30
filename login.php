@@ -17,6 +17,18 @@ $conn = sqlsrv_connect($serverName, $connectionOptions);
 
 if( $conn ) {
     /* echo "Connection established.<br />"; */
+    $sql = "SELECT * FROM tagebuch.Benutzer WHERE Benutzer.Mail = '$mail' AND Benutzer.Kennwort = '$kennwort' ";
+    $result = sqlsrv_query($conn, $sql);
+    $numrows = sqlsrv_num_rows($result);
+
+    if($numrows > 0) {
+        header('Location: tagebuch.html');
+    }
+    else {
+        echo 'Login not found';
+        header('Location: index.html');
+    }
+   
   
 }else{
     echo "Connection could not be established.<br />";
@@ -26,5 +38,4 @@ if( $conn ) {
 
 
 
-header('Location: tagebuch.html');
 ?>
