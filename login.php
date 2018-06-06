@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //Variablen definieren
 
  $mail = $_POST["mail"];
@@ -26,7 +26,7 @@ $connectionOptions =
                 header('Location: tagebuch.html');
      
             } else {
-                echo "Failed to authenticate...<br>";
+                header('Location: index.html');
             }
         }
     }
