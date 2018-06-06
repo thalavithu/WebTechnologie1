@@ -17,6 +17,50 @@
         <div class="Inhalt">
             <div class="Inhalt">
                 <h2>Neuer Eintrag</h2>
+                <form method="post" action="neuerbenutzer.php">
+                    <table>
+                        <tr>
+                            <th>
+                                <p class="Table">Kategorie:</p>
+                            </th>
+                            <th>
+                                <select>
+                                    <option value="ferien">Ferien</option>
+                                    <option value="geburtstag">Geburtstag</option>
+                                    <option value="familienfest">Familienfest</option>
+                                </select>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p class="Table">Datum</p>
+                            </th>
+                            <th>
+                                <input name="datum" type="date">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p class="Table">Text:</p>
+                            </th>
+                            <th>
+                                <input name="test" type="text" size="30" maxlength="1000">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p class="Table">Bild:</p>
+                            </th>
+                            <th>
+                                <input name="bild" type="file">
+                            </th>
+                        </tr>
+                    </table>
+                    <p>
+                        <INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;">
+                        <input type="submit" value="Speichern" />
+                    </p>
+                </form>
             </div>
             <div class="footer">
                 <p>&copy; by Kevin K. &amp; Vithursan S.</p>
