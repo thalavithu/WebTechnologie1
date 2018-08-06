@@ -23,7 +23,8 @@ $connectionOptions =
         } else {
             
             if (sqlsrv_has_rows($stmt) > 0) {
-                header('Location: tagebuch.html');
+                $_SESSION['Mail'] = $mail;
+                header('Location: tagebuch.php');
      
             } else {
                 header('Location: index.html');

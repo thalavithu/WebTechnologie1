@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 //Variablen definieren
 $datum = $_POST["datum"];
 $bild = $_POST["bild"];
@@ -20,13 +22,13 @@ $conn = sqlsrv_connect($serverName, $connectionOptions);
 if( $conn ) {
     /* echo "Connection established.<br />"; */
 	
-	 $sql = ("INSERT INTO tagebuch.Benutzer(Vorname, Nachname, Mail, Kennwort) VALUES ('$vorname', '$nachname', '$mail', '$kennwort');");
+	 $sql = ("INSERT INTO tagebuch.Tagebuch(Vorname, Nachname, Mail, Kennwort) VALUES ('$_SESSION['Mail']', '$datum', '$bild', '$text');");
 	
     
      $daten = sqlsrv_query($conn, $sql);
     
      
-     header('Location: index.html');
+     header('Location: tagebuch.html');
     
     
 }else{

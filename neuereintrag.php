@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html>
-
+<?php
+session_start();
+?>
 <head>
     <title>IBZ Tagebuch</title>
     <meta name="description" content="IBZ Tagebuch">
