@@ -17,6 +17,9 @@
         <div class="Inhalt">
             <div class="Inhalt">
                 <h2>Neuer Eintrag</h2>
+
+                
+
                 <form method="post" action="neuereintrag2.php">
                     <table>
                         <tr>
@@ -24,15 +27,31 @@
                                 <p class="Table">Kategorie:</p>
                             </th>
                             <th>
-                                <select>
-                                    <?php 
+                            <select>
+                            <option selected disabled>Choose here</option>
+                            <?php
+                                //Serververbindung
+                                $serverName = "ibz-tagebuch-mysqldbserver.database.windows.net,1433";
+                                $connectionOptions = 
+                                    array(
+                                        "Database" => "IBZ-Tagebuch-SQL",
+                                        "Uid" => "mysqldbuser",
+                                        "PWD" => "LoveIBZ$2018$"
+                                    );
+                                $conn = sqlsrv_connect($serverName, $connectionOptions);
+                                
+                            
 
-                                        $sql = "SELECT KategorieName FROM tagebuch.Kategorie;"; 
-                                        $result = mysql_query($sql) OR die(mysql_error()); 
-                                        while($row = mysql_fetch_assoc($result)) { 
-                                            echo "<option>"$row['options']"</option>"; 
-                                        } 
-                                    ?>
+                                $sql = "SELECT KategorieName FROM tagebuch.Kategorie";
+                                $stmt = sqlsrv_query( $conn, $sql);
+                                if( $stmt === false ) {
+                                    die( print_r( sqlsrv_errors(), true));
+                                }
+
+                                while( $obj = sqlsrv_fetch_object( $stmt)) {
+                                    echo "<option>$obj->KategorieName</option>";
+                                }
+                                ?>
                                 </select>
                             </th>
                         </tr>
@@ -41,7 +60,7 @@
                                 <p class="Table">Datum</p>
                             </th>
                             <th>
-                                <input name="datum" type="date">
+                                <input name="datum" type="date" value="<?php echo date('Y-m-d'); ?>">
                             </th>
                         </tr>
                         <tr>

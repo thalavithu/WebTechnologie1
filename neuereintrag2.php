@@ -1,10 +1,10 @@
 <?php
 
 //Variablen definieren
-$vorname = $_POST["vorname"];
-$nachname = $_POST["nachname"];
-$mail = $_POST["mail"];
-$kennwort = $_POST["kennwort"];
+$datum = $_POST["datum"];
+$bild = $_POST["bild"];
+$text = $_POST["text"];
+
 
 //Serververbindung
 $serverName = "ibz-tagebuch-mysqldbserver.database.windows.net,1433";
@@ -26,7 +26,7 @@ if( $conn ) {
      $daten = sqlsrv_query($conn, $sql);
     
      
-     header('Location: tagebuch.html');
+     header('Location: index.html');
     
     
 }else{
