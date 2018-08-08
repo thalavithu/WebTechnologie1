@@ -10,7 +10,7 @@ $text = $_POST["text"];
 
 
 
-echo "$_SESSION['Mail'].<br />.$kategorie.<br />.$datum.<br />.$bild.<br />.$text";
+echo "$kategorie.<br />.$datum.<br />.$bild.<br />.$text";
 
 /*
 //Serververbindung
