@@ -29,7 +29,7 @@ session_start();
                                 <p class="Table">Kategorie:</p>
                             </th>
                             <th>
-                            <select name"kategorie">
+                            <select name="kategorie">
                             <option selected disabled>Choose here</option>
                             <?php
                                 //Serververbindung
