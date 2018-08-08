@@ -11,6 +11,7 @@ $text = $_POST["text"];
 
 
 echo "$kategorie.<br />.$datum.<br />.$bild.<br />.$text";
+echo $_SESSION['Mail'];
 
 /*
 //Serververbindung
