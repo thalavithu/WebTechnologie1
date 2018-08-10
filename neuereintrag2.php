@@ -8,12 +8,6 @@ $text = $_POST["text"];
 $bild = $_POST["bild"];
 
 
-/*
-echo "$kategorie.<br />.$datum.<br />.$bild.<br />.$text";
-echo $_SESSION['Mail'];
-*/
-
-
 //Serververbindung
 $serverName = "ibz-tagebuch-mysqldbserver.database.windows.net,1433";
 $connectionOptions = 
@@ -24,35 +18,27 @@ $connectionOptions =
     );
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
-
-//BenutzerID auslesen
-$sql1 = ("SELECT BenutzerId FROM tagebuch.Benutzer WHERE Mail = '{$_SESSION['Mail']}';");
-$daten1 = sqlsrv_query($conn, $sql1);
-while($result1 = sqlsrv_fetch_object($daten1)){
-    $benutzerId = $result1->BenutzerId;
-}
-echo "Hoi".$benutzerId."<br />";
-
-//KategorieID auslesen
-$sql2 = ("SELECT KategorieID FROM tagebuch.Kategorie WHERE KategorieName = 'Auto';");
-$daten2 = sqlsrv_query($conn, $sql2);
-while($result2 = sqlsrv_fetch_object($daten2)){
-    $kategorieId = $result2->KategorieId;
-}
-echo "Hallo".$kategorieId;
-
-
-/*
 if( $conn ) {
-    
-	
-	 $sql = ("INSERT INTO tagebuch.Tagebuch(Vorname, Nachname, Mail, Kennwort) VALUES ('$kategorie', '$datum', '$bild', '$text');");
-	
-    
-     $daten = sqlsrv_query($conn, $sql);
+
+    //BenutzerID auslesen
+    $sql1 = ("SELECT BenutzerID FROM tagebuch.Benutzer WHERE Mail = '{$_SESSION['Mail']}';");
+    $daten1 = sqlsrv_query($conn, $sql1);
+    while($result1 = sqlsrv_fetch_object($daten1)){
+        $benutzerId = $result1->BenutzerID;
+    }
+
+    //KategorieID auslesen
+    $sql2 = ("SELECT KategorieID FROM tagebuch.Kategorie WHERE KategorieName = '$kategorie';");
+    $daten2 = sqlsrv_query($conn, $sql2);
+    while($result2 = sqlsrv_fetch_object($daten2)){
+        $kategorieId = $result2->KategorieID;
+    }
+
+	$sql3 = ("INSERT INTO tagebuch.Tagebuch (BenutzerID, KategorieID, Bild, Datum, Freitext) VALUES ('$benutzerId', '$kategorieId', '$bild', '$datum', '$text');");
+	$daten = sqlsrv_query($conn, $sql3);
     
      
-     header('Location: tagebuch.html');
+    header('Location: tagebuch.php');
     
     
 }else{

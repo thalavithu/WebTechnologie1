@@ -5,63 +5,57 @@
     <title>IBZ Tagebuch</title>
     <meta name="description" content="IBZ Tagebuch">
     <meta name="author" content="Kevin&Vithursan">
-    <link rel="stylesheet" type="text/css" href="Style/style.css">
+    <link rel="stylesheet" type="text/css" href="Style/basic.css">
     <link rel="shortcut icon" href="Bilder/tagebuch.ico" />
 </head>
 
 <body>
     <div class="MainDiv">
-        <div class="Title">
+        <div class="title">
             <h1>IBZ Tagebuch</h1>
         </div>
-        <div class="Inhalt">
-            <div class="Inhalt">
-                <h2>Registration</h2>
-                <form method="post" action="neuerbenutzer.php">
+        <div class="inhalt">
+            <h2>Registration</h2>
+            <form method="post" action="neuerbenutzer.php">
 
-                    <table>
-                        <tr>
-                            <th>
-                                <p class="Table">Vorname:</p>
-                            </th>
-                            <th>
-                                <input name="vorname" type="text" size="30" maxlength="30">
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                <p class="Table">Nachname:</p>
-                            </th>
-                            <th>
-                                <input name="nachname" type="text" size="30" maxlength="30">
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                <p class="Table">Mail:</p>
-                            </th>
-                            <th>
-                                <input name="mail" type="text" size="30" maxlength="30" required>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>
-                                <p class="Table">Kennwort:</p>
-                            </th>
-                            <th>
-                                <input name="kennwort" type="password" size="30" maxlength="30" required>
-                            </th>
-                        </tr>
-                    </table>
-                    <p>
-                        <INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;">
-                        <input type="submit" value="Registrieren" />
-                    </p>
-                </form>
-            </div>
-            <div class="footer">
-                <p>&copy; by Kevin K. &amp; Vithursan S.</p>
-            </div>
+                <div class="control">
+                    <div class="label">Vorname:</div>
+                    <div class="field">
+                        <input name="vorname" class="input" type="text" maxlength="255" required />
+                    </div>
+                </div>
+
+                <div class="control">
+                    <div class="label">Nachname:</div>
+                    <div class="field">
+                        <input name="nachname" class="input" type="text" maxlength="255" required />
+                    </div>
+                </div>
+
+                <div class="control">
+                    <div class="label">Mail:</div>
+                    <div class="field">
+                        <input name="mail" class="input" type="text" maxlength="255" required />
+                    </div>
+                </div>
+
+                <div class="control">
+                    <div class="label">Passwort:</div>
+                    <div class="field">
+                        <input name="kennwort" class="input" type="password" maxlength="255" required />
+                    </div>
+                </div>
+                <div>
+                    <div class="label"></div>
+                    <div class="field buttons">
+                        <input type="submit" class="button width-70" value="Registrieren" />
+                        <INPUT Type="button" class="link" VALUE="Back" onClick="history.go(-1);return true;">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="footer">
+            &copy; by Kevin K. &amp; Vithursan S.
         </div>
 </body>
 

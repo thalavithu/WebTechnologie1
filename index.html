@@ -5,45 +5,42 @@
     <title>IBZ Tagebuch</title>
     <meta name="description" content="IBZ Tagebuch">
     <meta name="author" content="Kevin&Vithursan">
-    <link rel="stylesheet" type="text/css" href="Style/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="Style/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="Style/basic.css">
     <link rel="shortcut icon" href="Bilder/tagebuch.ico" />
 </head>
 
 <body>
     <div class="MainDiv">
-        <div class="Title">
+        <div class="title">
             <h1>IBZ Tagebuch</h1>
         </div>
-        <div class="Inhalt">
+        <div class="inhalt">
             <h2>Anmeldung</h2>
             <form method="post" action="Login.php">
-                
-                <table>
-                    <tr>
-                        <th>
-                            <p class="Table">Mail:</p>
-                        </th>
-                        <th>
-                            <input name="mail" type="text" size="30" maxlength="30" required>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <p class="Table">Passwort:</p>
-                        </th>
-                        <th>
-                            <input name="passwort" type="password" size="30" maxlength="30" required>
-                        </th>
-                    </tr>
-                </table>
-                <p>
-                    <input type="submit" value="Anmelden" />
-                    <INPUT Type="button" VALUE="Neuer Benutzer" onClick="location.href='neuerbenutzer.html'">
-                </p>
+                <div class="control">
+                    <div class="label">Mail:</div>
+                    <div class="field">
+                        <input name="mail" class="input" type="text" maxlength="255" required />
+                    </div>
+                </div>
+                <div class="control">
+                    <div class="label">Passwort:</div>
+                    <div class="field">
+                        <input name="passwort" class="input" type="password" maxlength="255" required />
+                    </div>
+                </div>
+                <div>
+                    <div class="label"></div>
+                    <div class="field buttons">
+                        <input type="submit" class="button width-70" value="Anmelden" />
+                        <input Type="button" class="link" VALUE="Neuer Benutzer" onClick="location.href='neuerbenutzer.html'">
+                    </div>
+                </div>
             </form>
         </div>
         <div class="footer">
-            <p>&copy; by Kevin K. &amp; Vithursan S.</p>
+            &copy; by Kevin K. &amp; Vithursan S.
         </div>
     </div>
 </body>
