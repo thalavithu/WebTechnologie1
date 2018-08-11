@@ -4,7 +4,7 @@
 $vorname = $_POST["vorname"];
 $nachname = $_POST["nachname"];
 $mail = $_POST["mail"];
-$kennwort = $_POST["kennwort"];
+$passwort = $_POST["passwort"];
 
 //Serververbindung
 $serverName = "ibz-tagebuch-mysqldbserver.database.windows.net,1433";
@@ -20,7 +20,7 @@ $conn = sqlsrv_connect($serverName, $connectionOptions);
 if( $conn ) {
     /* echo "Connection established.<br />"; */
 	
-	 $sql = ("INSERT INTO tagebuch.Benutzer(Vorname, Nachname, Mail, Kennwort) VALUES ('$vorname', '$nachname', '$mail', '$kennwort');");
+	 $sql = ("INSERT INTO tagebuch.Benutzer(Vorname, Nachname, Mail, Kennwort) VALUES ('$vorname', '$nachname', '$mail', '$passwort');");
 	
     
      $daten = sqlsrv_query($conn, $sql);
