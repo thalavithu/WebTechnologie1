@@ -1,18 +1,20 @@
 <?php
 session_start();
+
 //Variablen definieren
 
  $mail = $_POST["mail"];
  $kennwort = $_POST["passwort"];
 
- $serverName = "ibz-tagebuch-mysqldbserver.database.windows.net,1433";
+//Serververbindung
+$serverName = "ibz-tagebuch-mysqldbserver.database.windows.net,1433";
 $connectionOptions = 
     array(
         "Database" => "IBZ-Tagebuch-SQL",
         "Uid" => "mysqldbuser",
         "PWD" => "LoveIBZ$2018$"
     );
-    $conn = sqlsrv_connect($serverName, $connectionOptions);
+$conn = sqlsrv_connect($serverName, $connectionOptions);
 
     if ($conn) {
         $sql = "SELECT vorname FROM tagebuch.Benutzer  WHERE Mail = '$mail' AND Kennwort = '$kennwort'";

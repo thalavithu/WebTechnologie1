@@ -7,10 +7,12 @@ html, body{
     width: 100%;
 }
 
-body{
-background: url(https://images.unsplash.com/photo-1521623569012-4eb30b21369a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=28ee2f63a210ba9ebacd002c1f7dbf8c&auto=format&fit=crop&w=1950&q=80) no-repeat center center fixed;
+/*body{
+background: url(https://images.unsplash.com/photo-1521623569012-4eb30b21369a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=28ee2f63a210ba9ebacd002c1f7dbf8c&auto=format&fit=crop&w=1950&q=80) no-repeat center center fixed; 
 background-size: cover;
 }
+*/
+
 * {
     font-family: 'PT Sans', sans-serif;
     box-sizing: border-box;
@@ -40,6 +42,7 @@ background-size: cover;
 .label{
     display: inline-block;
     width: 100px;
+    vertical-align: top;
 }
 
 .field{
@@ -59,7 +62,7 @@ background-size: cover;
 
 /**
 *   LOGIN/Register Page:
-*/
+**/
 
 .inhalt{
     background: rgba(0,0,0,0.2);
