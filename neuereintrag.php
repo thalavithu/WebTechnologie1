@@ -19,7 +19,7 @@ session_start();
         </div>
         <div class="inhalt">
                 <h2>Neuer Eintrag</h2>
-                <form method="post" action="neuereintrag2.php">
+                <form method="post" action="neuereintrag2.php" enctype="multipart/form-data">
 
                     <div class="control">
                         <div class="label">Kategorie:</div>
@@ -28,25 +28,17 @@ session_start();
                                     <option selected disabled>Choose here</option>
                                     <?php
                                         //Serververbindung
-                                        $serverName = "ibz-tagebuch-mysqldbserver.database.windows.net,1433";
-                                        $connectionOptions = 
-                                            array(
-                                                "Database" => "IBZ-Tagebuch-SQL",
-                                                "Uid" => "mysqldbuser",
-                                                "PWD" => "LoveIBZ$2018$"
-                                            );
-                                        $conn = sqlsrv_connect($serverName, $connectionOptions);
-                                        
+                                        include_once './config/sql.connection.php';
                                     
 
-                                        $sql = "SELECT KategorieName FROM tagebuch.Kategorie";
+                                        $sql = "SELECT KategorieId, KategorieName FROM tagebuch.Kategorie";
                                         $stmt = sqlsrv_query( $conn, $sql);
                                         if( $stmt === false ) {
                                             die( print_r( sqlsrv_errors(), true));
                                         }
 
                                         while( $obj = sqlsrv_fetch_object( $stmt)) {
-                                            echo "<option>$obj->KategorieName</option>";
+                                            echo "<option value=\"$obj->KategorieId\">$obj->KategorieName</option>";
                                         }
                                         ?>
                             </select>

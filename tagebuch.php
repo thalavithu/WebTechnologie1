@@ -23,7 +23,7 @@ session_start();
             <h2>Tagebuch</h2>
             <div class="field buttons">
                 <input type="button" class="link" VALUE="Neuer Eintrag" onClick="location.href='neuereintrag.php'" />
-                <input type="button" class="link" VALUE="Alle Einträge anzeigen" onClick="location.href=''" />
+                <input type="button" class="link" VALUE="Alle Einträge anzeigen" onClick="location.href='alle.php'" />
                 <input type="button" class="link" VALUE="Einträge filtern" onClick="location.href=''" />
                 <input type="button" class="link" VALUE="Ausloggen" onClick="location.href='logout.php'" />
              </div>

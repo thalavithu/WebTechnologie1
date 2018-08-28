@@ -89,3 +89,17 @@ background-size: cover;
 .title h1{
     margin: 40px 0;
 }
+
+/**
+*   alle.php
+*
+*/
+
+.grid-tabelle {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+}
+
+.grid-tabelle .titel{
+    font-weight: bold;
+}
