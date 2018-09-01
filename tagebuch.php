@@ -16,18 +16,14 @@ session_start();
 
 <body>
     <div class="MainDiv">
+        <input type="button" class="logout" VALUE="Ausloggen" onClick="location.href='logout.php'" />
         <div class="title">
             <h1>IBZ Tagebuch</h1>
         </div>
         <div class="inhalt">
             <h2>Tagebuch</h2>
-            <div class="field buttons">
-                <input type="button" class="link" VALUE="Neuer Eintrag" onClick="location.href='neuereintrag.php'" />
-                <input type="button" class="link" VALUE="Alle Einträge anzeigen" onClick="location.href='alle.php'" />
-                <input type="button" class="link" VALUE="Einträge filtern" onClick="location.href=''" />
-                <input type="button" class="link" VALUE="Ausloggen" onClick="location.href='logout.php'" />
-             </div>
-            
+                <a class="list" href="neuereintrag.php">Neuer Eintrag</a>
+                <a class="list"  href="alle.php" >Einträge anzeigen</a>            
         </div>
         <div class="footer">
             <p>&copy; by Kevin K. &amp; Vithursan S.</p>

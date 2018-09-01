@@ -7,11 +7,21 @@ include_once './config/sql.connection.php';
 $kategorie = $_POST["kategorie"];
 $datum = $_POST["datum"];
 $text = $_POST["text"];
-//$bild = $_FILES["bild"];
+$image = $_FILES["bild"]["name"];
 
 
-//Bildinfos holen
-//$image = $_FILES['bild']['name'];
+//Bildspeicherort
+$uploaddir ="images/";
+$uploadfile = $uploaddir . basename($_FILES["bild"]["name"]);
+
+
+//Bild kopieren auf den Server
+if(move_uploaded_file($_FILES["bild"]["tmp_name"], $uploadfile)) {
+    echo "Datei ist valide und wurde erfolgreich hochgeladen.\n";
+} else {
+    echo "Möglicherweise eine Dateiupload-Attacke!\n";
+}
+
 
 
 //BenutzerID auslesen
@@ -34,6 +44,7 @@ if( $stmt === false ) {
         }
     }
 }
+
 else{
     header('Location: tagebuch.php');
 }

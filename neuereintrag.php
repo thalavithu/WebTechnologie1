@@ -14,6 +14,7 @@ session_start();
 
 <body>
     <div class="MainDiv">
+    <input type="button" class="logout" VALUE="Ausloggen" onClick="location.href='logout.php'" />
         <div class="title">
             <h1>IBZ Tagebuch</h1>
         </div>
@@ -41,8 +42,8 @@ session_start();
                                             echo "<option value=\"$obj->KategorieId\">$obj->KategorieName</option>";
                                         }
                                         ?>
-                            </select>
-                        </div>
+                                </select>
+                            </div>
                     </div>
 
                     <div class="control">

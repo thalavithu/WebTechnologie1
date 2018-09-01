@@ -16,28 +16,32 @@
             <h1>IBZ Tagebuch</h1>
         </div>
         <div class="inhalt">
-            <h2>Tagebuch</h2>
-            
-            <?php
-            
+            <h2>Filter Anzeige</h2>
+
+        <?php
+
+            //Variablen definieren
+            $kategorie = $_POST["kategorie"];
+            $datum = $_POST["datum"];
+
             //Serververbindung
             include_once './config/session.php';
             //Serververbindung
             include_once './config/sql.connection.php';
 
             
-        
+
             $sql4 = "SELECT k.KategorieName, t.Datum, t.Freitext 
                         FROM tagebuch.Tagebuch t
                         JOIN tagebuch.Kategorie k ON k.KategorieID = t.KategorieID 
                         join tagebuch.Benutzer b on t.BenutzerID = b.BenutzerID
-                        WHERE b.Mail = '$benutzerMail'";
+                        WHERE b.Mail = '$benutzerMail'AND (k.KategorieId='$kategorie' OR t.Datum='$datum')";
 
             $result = sqlsrv_query( $conn, $sql4 );
             if( $result === false) {
                 die( print_r( sqlsrv_errors(), true) );
             }
-
+           
             echo "<div class=\"grid-tabelle\">";
             echo "<div class=\"titel\">Kategorie</div>";
             echo "<div class=\"titel\">Datum</div>";
@@ -53,10 +57,10 @@
             
             sqlsrv_free_stmt( $result);
 
-            ?>
-            <div class="field buttons">
-                <input type="button" class="button width-70" VALUE="Filtern" onclick="location.href='filter.php'" />
-                <INPUT Type="button" class="link" VALUE="Back" onClick="history.go(-1);return true;">
+        ?>
+
+        <div class="field buttons">
+                <INPUT Type="button" class="link" VALUE="Alle Einträge" onClick="location.href='alle.php'">
             </div>
         </div>
         <div class="footer">
@@ -66,3 +70,6 @@
 </body>
 
 </html>
+
+
+

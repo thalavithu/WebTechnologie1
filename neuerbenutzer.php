@@ -9,7 +9,6 @@ $passwort = $_POST["passwort"];
 //Serververbindung
 include_once './config/sql.connection.php';
 
-
 if( $conn ) {
     /* echo "Connection established.<br />"; */
 	
