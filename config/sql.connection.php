@@ -1,5 +1,6 @@
 <?php
 
+//Datenbank-Verbindung
 $serverName = "ibz-tagebuch-mysqldbserver.database.windows.net,1433";
 $connectionOptions = 
     array(

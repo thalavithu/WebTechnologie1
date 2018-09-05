@@ -1,11 +1,11 @@
 <?php
-session_start();
 
     //Variablen definieren
-
     $mail = htmlspecialchars($_POST["mail"]);
     $kennwort = htmlspecialchars($_POST["passwort"]);
 
+    //Sesssioninfos
+    include_once './config/session.php';
     //Serververbindung
     include_once './config/sql.connection.php';
 

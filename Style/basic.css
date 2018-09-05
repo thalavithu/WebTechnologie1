@@ -1,4 +1,17 @@
+/**
+*   Schriftart von Google importieren
+**/
+
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i');
+
+/**
+*   Basis CSS
+**/
+
+* {
+    font-family: 'PT Sans', sans-serif;
+    box-sizing: border-box;
+}
 
 html, body{
     margin: 0;
@@ -7,25 +20,40 @@ html, body{
     width: 100%;
 }
 
-/*body{
-background: url(https://images.unsplash.com/photo-1521623569012-4eb30b21369a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=28ee2f63a210ba9ebacd002c1f7dbf8c&auto=format&fit=crop&w=1950&q=80) no-repeat center center fixed; 
-background-size: cover;
+body{
+    background: url(https://images.unsplash.com/photo-1493804961404-ecabb5ab3d4a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=397b5cc375162522b43a6ab989b9583b&auto=format&fit=crop&w=1950&q=80) no-repeat center center fixed;
+/*background: url(https://images.unsplash.com/photo-1521623569012-4eb30b21369a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=28ee2f63a210ba9ebacd002c1f7dbf8c&auto=format&fit=crop&w=1950&q=80) no-repeat center center fixed; */
+    background-size: cover;
 }
-*/
 
-* {
-    font-family: 'PT Sans', sans-serif;
-    box-sizing: border-box;
+
+.inhalt{
+    background: rgba(255,255,255,0.75);
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 450px;
+    padding: 20px;
+}
+.inhalt h2{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.footer{
+    bottom: 0;
+    text-align: center;
+    width: 100%;
 }
 
 .logout {
-    color: #3880ff;
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
     background: transparent;
     border: 1px solid transparent;
     padding: 10px;
     float:  right;
 }
-
 
 .list {
     color: #3880ff;
@@ -78,30 +106,6 @@ background-size: cover;
 .buttons input{
     width: 49%;
 }
-
-/**
-*   LOGIN/Register Page:
-**/
-
-.inhalt{
-    background: rgba(0,0,0,0.2);
-    border-radius: 5px;
-    margin: 0 auto;
-    width: 450px;
-    padding: 20px;
-}
-.inhalt h2{
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.footer{
-    /* position: absolute; */
-    bottom: 0;
-    text-align: center;
-    width: 100%;
-}
-
 .title{
     text-align: center;
 }
@@ -110,8 +114,7 @@ background-size: cover;
 }
 
 /**
-*   alle.php
-*
+*   Tabellarisches Darstellen
 */
 
 .grid-tabelle {

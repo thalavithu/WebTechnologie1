@@ -20,13 +20,13 @@
             
             <?php
             
-            //Serververbindung
+            //Sesssioninfos
             include_once './config/session.php';
             //Serververbindung
             include_once './config/sql.connection.php';
 
             
-        
+            //SQL Abfrage - Alle Einträge anzeigen
             $sql4 = "SELECT k.KategorieName, t.Datum, t.Freitext 
                         FROM tagebuch.Tagebuch t
                         JOIN tagebuch.Kategorie k ON k.KategorieID = t.KategorieID 
@@ -38,6 +38,7 @@
                 die( print_r( sqlsrv_errors(), true) );
             }
 
+            //Tabellarisches Darstellen
             echo "<div class=\"grid-tabelle\">";
             echo "<div class=\"titel\">Kategorie</div>";
             echo "<div class=\"titel\">Datum</div>";

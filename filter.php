@@ -24,11 +24,12 @@
                         <select name="kategorie">
                                 <option selected disabled>Choose here</option>
                                 <?php
-                                    //Serververbindung
+                                    //Sesssioninfos
                                     include_once './config/session.php';
+                                    //Serververbindung
                                     include_once './config/sql.connection.php';
                                 
-
+                                    //SQL Abfrage - Kategorie anzeigen
                                     $sql = "SELECT KategorieId, KategorieName FROM tagebuch.Kategorie";
                                     $stmt = sqlsrv_query( $conn, $sql);
                                     if( $stmt === false ) {
@@ -43,13 +44,19 @@
                     </div>
                 </div>
                 <div class="control">
-                    <div class="label">Datum:</div>
+                    <div class="label">Datum Von:</div>
                     <div class="field">
-                    <input name="datum" type="date">
+                    <input name="datumVon" type="date">
+                    </div>
+                </div>
+
+                <div class="control">
+                    <div class="label">Datum Bis:</div>
+                    <div class="field">
+                    <input name="datumBis" type="date">
                     </div>
                 </div>
                 
-            
             <div class="field buttons">
                 <input type="submit" class="button width-70" value="Filtern" />
                 <INPUT Type="button" class="link" VALUE="Back" onClick="history.go(-1);return true;">

@@ -22,20 +22,20 @@
 
             //Variablen definieren
             $kategorie = $_POST["kategorie"];
-            $datum = $_POST["datum"];
+            $datumVon = $_POST["datumVon"];
+            $datumBis = $_POST["datumBis"];
 
-            //Serververbindung
+            //Sesssioninfos
             include_once './config/session.php';
             //Serververbindung
             include_once './config/sql.connection.php';
 
-            
-
+            //SQL Abfrage - Filtern der Einträge
             $sql4 = "SELECT k.KategorieName, t.Datum, t.Freitext 
                         FROM tagebuch.Tagebuch t
                         JOIN tagebuch.Kategorie k ON k.KategorieID = t.KategorieID 
-                        join tagebuch.Benutzer b on t.BenutzerID = b.BenutzerID
-                        WHERE b.Mail = '$benutzerMail'AND (k.KategorieId='$kategorie' OR t.Datum='$datum')";
+                        join tagebuch.Benutzer b ON t.BenutzerID = b.BenutzerID
+                        WHERE b.Mail = '$benutzerMail'AND (k.KategorieId='$kategorie' OR t.Datum BETWEEN '$datumVon' AND '$datumBis')";
 
             $result = sqlsrv_query( $conn, $sql4 );
             if( $result === false) {
@@ -60,9 +60,10 @@
         ?>
 
         <div class="field buttons">
-                <INPUT Type="button" class="link" VALUE="Alle Einträge" onClick="location.href='alle.php'">
+                <INPUT Type="button" class="button width-70" VALUE="Alle Einträge" onClick="location.href='alle.php'">
             </div>
         </div>
+
         <div class="footer">
             <p>&copy; by Kevin K. &amp; Vithursan S.</p>
         </div>
