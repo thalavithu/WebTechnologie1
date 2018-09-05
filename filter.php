@@ -11,9 +11,9 @@
 
 <body>
     <div class="MainDiv">
-    <input type="button" class="logout" VALUE="Ausloggen" onClick="location.href='logout.php'" />
+    <a class="logout" href="logout.php">Ausloggen</a>
         <div class="title">
-            <h1>IBZ Tagebuch</h1>
+            <h1><a href="tagebuch.php">IBZ Tagebuch</a></h1>
         </div>
         <div class="inhalt">
             <h2>Einträge filtern</h2>
