@@ -160,7 +160,7 @@ h1 > a{
 
 .grid-tabelle {
     display: grid;
-    grid-template-columns: 1fr 1fr 4fr;
+    grid-template-columns: 1fr 1fr 4fr 1fr;
 }
 
 .grid-tabelle .titel {
@@ -195,4 +195,9 @@ h1 > a{
     background-color: #3171e0;
     color: white;
     margin-bottom: 50px;
+}
+
+.img{
+    height: 150px;
+    width: auto;
 }

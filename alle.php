@@ -27,7 +27,7 @@
 
             
             //SQL Abfrage - Alle Einträge anzeigen
-            $sql4 = "SELECT k.KategorieName, t.Datum, t.Freitext 
+            $sql4 = "SELECT k.KategorieName, t.Datum, t.Freitext, t.Bild 
                         FROM tagebuch.Tagebuch t
                         JOIN tagebuch.Kategorie k ON k.KategorieID = t.KategorieID 
                         join tagebuch.Benutzer b on t.BenutzerID = b.BenutzerID
@@ -43,11 +43,18 @@
             echo "<div class=\"titel\">Kategorie</div>";
             echo "<div class=\"titel\">Datum</div>";
             echo "<div class=\"titel\">Text</div>";
+            echo "<div class=\"titel\">Bild</div>";
             while( $obj = sqlsrv_fetch_object( $result)) {
 
                 echo "<div>".$obj->KategorieName."</div>";
                 echo "<div>".$obj->Datum->format('d.m.Y')."</div>";
                 echo "<div>".$obj->Freitext."</div>";
+                if(!empty($obj->Bild)){
+                echo "<div><img class=\"img\" src=\"./images/".$obj->Bild."\"></div>";
+                }
+                else{
+                    echo "<div></div>";
+                }
 
             }
             echo "</div>";
