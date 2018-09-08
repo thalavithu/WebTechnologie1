@@ -15,7 +15,7 @@
         <div class="title">
             <h1><a href="tagebuch.php">IBZ Tagebuch</a></h1>
         </div>
-        <div class="inhalt">
+        <div class="inhalt big">
             <h2>Filter Anzeige</h2>
 
         <?php
@@ -31,7 +31,7 @@
             include_once './config/sql.connection.php';
 
             //SQL Abfrage - Filtern der Einträge
-            $sql4 = "SELECT k.KategorieName, t.Datum, t.Freitext 
+            $sql4 = "SELECT k.KategorieName, t.Datum, t.Freitext, t.Bild 
                         FROM tagebuch.Tagebuch t
                         JOIN tagebuch.Kategorie k ON k.KategorieID = t.KategorieID 
                         join tagebuch.Benutzer b ON t.BenutzerID = b.BenutzerID
@@ -48,11 +48,18 @@
             echo "<div class=\"titel\">Kategorie</div>";
             echo "<div class=\"titel\">Datum</div>";
             echo "<div class=\"titel\">Text</div>";
+            echo "<div class=\"titel\">Bild</div>";
             while( $obj = sqlsrv_fetch_object( $result)) {
 
                 echo "<div>".$obj->KategorieName."</div>";
                 echo "<div>".$obj->Datum->format('d.m.Y')."</div>";
                 echo "<div>".$obj->Freitext."</div>";
+                if(!empty($obj->Bild)){
+                    echo "<div><img class=\"img\" src=\"./images/".$obj->Bild."\"></div>";
+                    }
+                else{
+                    echo "<div></div>";
+                }
 
             }
             echo "</div>";
