@@ -27,12 +27,17 @@ body{
 
 
 .inhalt{
-    background: rgba(255,255,255,0.75);
+    background: rgba(255,255,255,0.95); 
     border-radius: 5px;
     margin: 0 auto;
     width: 450px;
     padding: 20px;
 }
+
+.inhalt.big{
+    width: 800px;
+}
+
 .inhalt h2{
     text-align: center;
     margin-bottom: 40px;
@@ -79,6 +84,7 @@ body{
     background: #eee;
     padding: 10px;
     width: 100%;
+    cursor: pointer;
 }
 
 .button{
@@ -98,13 +104,29 @@ body{
 .label{
     display: inline-block;
     width: 100px;
-    vertical-align: top;
 }
 
 .field{
     width: 300px;
     display: inline-block;
+
 }
+.field  select{
+    width: 100%;
+    height: 34px;
+    padding: 5px;
+  }
+
+.field  input[type="text"],
+.field  input[type="date"] {
+    width: 100%;
+    padding: 5px;
+  }
+
+.field  textarea{
+    width: 100%;
+    padding: 5px;
+  }
 .control{
     margin-bottom: 10px;
 }
@@ -116,7 +138,7 @@ body{
     width: 49%;
 }
 .title{
-    text-align: center;
+    text-align: left;
 }
 .title h1{
     margin: 40px 0;
@@ -133,9 +155,36 @@ h1 > a{
 
 .grid-tabelle {
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr 4fr;
 }
 
-.grid-tabelle .titel{
+.grid-tabelle .titel {
+    background-color: #3171e0;
+    color: white;
     font-weight: bold;
+}
+.grid-tabelle > div{
+  padding: 3px 10px;
+}
+
+.grid-tabelle div{
+    border-bottom: 1px solid rgba(100,100,100,0.2);
+  
+}
+
+.MainDiv .title h1 {
+    margin: 0;
+    color: white;
+}
+
+.MainDiv .title h1 a{
+    color: white;
+}
+  
+.MainDiv .logout{
+    color: white;
+}
+  
+.MainDiv .title {
+    padding: 10px;
 }

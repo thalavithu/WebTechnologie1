@@ -12,7 +12,8 @@ include_once './config/sql.connection.php';
 if( $conn ) {
     /* echo "Connection established.<br />"; */
 	
-	 $sql = ("INSERT INTO tagebuch.Benutzer(Vorname, Nachname, Mail, Kennwort) VALUES ('$vorname', '$nachname', '$mail', '$passwort');");
+	 $sql = ("INSERT INTO tagebuch.Benutzer(Vorname, Nachname, Mail, Kennwort) 
+                VALUES ('$vorname', '$nachname', '$mail', '$passwort');");
 	
     
      $daten = sqlsrv_query($conn, $sql);

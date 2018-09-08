@@ -15,7 +15,7 @@
         <div class="title">
             <h1><a href="tagebuch.php">IBZ Tagebuch</a></h1>
         </div>
-        <div class="inhalt">
+        <div class="inhalt big">
             <h2>Tagebuch</h2>
             
             <?php

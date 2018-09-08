@@ -35,7 +35,9 @@
                         FROM tagebuch.Tagebuch t
                         JOIN tagebuch.Kategorie k ON k.KategorieID = t.KategorieID 
                         join tagebuch.Benutzer b ON t.BenutzerID = b.BenutzerID
-                        WHERE b.Mail = '$benutzerMail'AND (k.KategorieId='$kategorie' OR t.Datum BETWEEN '$datumVon' AND '$datumBis')";
+                        WHERE b.Mail = '$benutzerMail'
+                            AND (k.KategorieId='$kategorie' 
+                                OR t.Datum BETWEEN '$datumVon' AND '$datumBis')";
 
             $result = sqlsrv_query( $conn, $sql4 );
             if( $result === false) {
