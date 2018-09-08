@@ -117,8 +117,9 @@ body{
     padding: 5px;
   }
 
-.field  input[type="text"],
-.field  input[type="date"] {
+  .field input[type="text"], 
+  .field input[type="password"], 
+  .field input[type="date"] {
     width: 100%;
     padding: 5px;
   }
@@ -132,6 +133,10 @@ body{
 }
 .width-70{
     width: 70px;
+}
+
+.buttons{
+    margin-top: 20px;
 }
 
 .buttons input{
@@ -187,4 +192,7 @@ h1 > a{
   
 .MainDiv .title {
     padding: 10px;
+    background-color: #3171e0;
+    color: white;
+    margin-bottom: 50px;
 }
