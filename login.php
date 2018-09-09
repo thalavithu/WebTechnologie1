@@ -1,8 +1,5 @@
 <?php
-
-
     //Variablen definieren
-
     $mail = htmlspecialchars($_POST["mail"]);
     $kennwort = htmlspecialchars($_POST["passwort"]);
 

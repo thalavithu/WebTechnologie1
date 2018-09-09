@@ -39,7 +39,7 @@
                                     while( $obj = sqlsrv_fetch_object( $stmt)) {
                                         echo "<option value=\"$obj->KategorieId\">$obj->KategorieName</option>";
                                     }
-                                    ?>
+                                ?>
                         </select>
                     </div>
                 </div>
@@ -49,14 +49,12 @@
                     <input name="datumVon" type="date">
                     </div>
                 </div>
-
                 <div class="control">
                     <div class="label">Datum Bis:</div>
                     <div class="field">
                     <input name="datumBis" type="date">
                     </div>
                 </div>
-                
             <div class="field buttons">
                 <input type="submit" class="button width-70" value="Filtern" />
                 <INPUT Type="button" class="link" VALUE="Back" onClick="history.go(-1);return true;">

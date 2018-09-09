@@ -19,7 +19,6 @@
             <h2>Filter Anzeige</h2>
 
         <?php
-
             //Variablen definieren
             $kategorie = $_POST["kategorie"];
             $datumVon = $_POST["datumVon"];
@@ -65,9 +64,7 @@
             echo "</div>";
             
             sqlsrv_free_stmt( $result);
-
         ?>
-
         <div class="field buttons">
                 <INPUT Type="button" class="button width-70" VALUE="Alle Einträge" onClick="location.href='alle.php'">
             </div>
